@@ -11,6 +11,7 @@ import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 import javax.validation.groups.Default;
 import java.io.Serializable;
+import java.util.Date;
 
 @MappedSuperclass
 @Getter @Setter
@@ -22,6 +23,18 @@ public class BaseEntity<ID> implements Serializable {
     @GeneratedValue(generator = "generator")
     @GenericGenerator(name = "generator", strategy = "org.hibernate.id.IdentityGenerator")
     private ID id;
+
+    @Column(name = "create_on")
+    private Date createOn;
+
+    @Column(name = "create_by")
+    private Long createBy;
+
+    @Column(name = "modify_on")
+    private Date modifyOn;
+
+    @Column(name = "modify_by")
+    private Long modifyBy;
 
     public interface Save extends Default {
 

@@ -1,5 +1,6 @@
 package com.weather.domain.entity;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,25 +15,19 @@ import java.util.Date;
 @Getter @Setter
 public class Report extends BaseEntity<Long>{
 
-
+    @ApiModelProperty("预报类型id")
     @Column(name = "report_type_id")
     private Long reportTypeId;
 
-    @Column(name = "report_type")
-    private String reportType;
-
+    @ApiModelProperty("预报时间")
     @Column(name = "report_time")
     private Date reportTime;
 
+    @ApiModelProperty("预报内容")
     @Column(name = "report_context")
     private String reportContext;
 
-    @Column(name = "reportor_id")
-    private Long reportorId;
-
-    @Column(name = "reportor")
-    private String reportor;
-
+    @ApiModelProperty("预报状态")
     @Column(name = "report_status")
     private String reportStatus;
 
