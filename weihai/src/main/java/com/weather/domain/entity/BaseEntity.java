@@ -19,7 +19,7 @@ public class BaseEntity<ID> implements Serializable {
 
     @Id
     @Column(name = "id")
-    @NotNull(message = "id不能为空！")
+    @NotNull(message = "id不能为空！", groups = Update.class)
     @GeneratedValue(generator = "generator")
     @GenericGenerator(name = "generator", strategy = "org.hibernate.id.IdentityGenerator")
     private ID id;

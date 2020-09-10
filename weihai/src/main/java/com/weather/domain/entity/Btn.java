@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 @Table(name = "WH_BTN")
@@ -24,4 +25,16 @@ public class Btn extends BaseEntity<Long>{
     @ApiModelProperty("按钮备注")
     @Column(name = "remark")
     private String remark;
+
+    public Btn createBy(Long createBy){
+        this.setCreateBy(createBy);
+        this.setCreateOn(new Date());
+        return this;
+    }
+
+    public Btn modifyBy(Long modifyBy){
+        this.setModifyBy(modifyBy);
+        this.setModifyOn(new Date());
+        return this;
+    }
 }

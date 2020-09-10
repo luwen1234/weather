@@ -19,10 +19,10 @@ public class Message<T> {
         return message;
     }
 
-    public static Message error(){
+    public static Message error(String code, String msg){
         Message message = new Message();
-        message.setCode("0");
-        message.setMsg("error");
+        message.setCode(code);
+        message.setMsg(msg);
         return message;
     }
 
