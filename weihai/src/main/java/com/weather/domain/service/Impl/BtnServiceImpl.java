@@ -26,12 +26,12 @@ public class BtnServiceImpl implements BtnService {
 
     @Override
     public Page<Btn> pageQuery(String name, Integer pageNo, Integer pageSize) {
-        return btnRepository.findByName(name, PageRequest.of(pageNo, pageSize));
+        return btnRepository.pageQuery(name, PageRequest.of(pageNo, pageSize));
     }
 
     @Override
     public List<Btn> listQuery(String name) {
-        return btnRepository.findByName(name);
+        return btnRepository.listQuery(name);
     }
 
     @Override
@@ -64,7 +64,10 @@ public class BtnServiceImpl implements BtnService {
         Assert.notEmpty(exists, "保存的按钮信息不能为空！");
         btnRepository.saveAll(exists.stream().filter(item -> Objects.nonNull(updateCache.get(item.getId())))
                 .map(item -> {
-                    return BtnAssembler.INSTANCE.buildBtn(updateCache.get(item.getId())).modifyBy(1L);
+                    Btn btn = BtnAssembler.INSTANCE.buildBtn(updateCache.get(item.getId())).modifyBy(1L);
+                    btn.setCreateOn(item.getCreateOn());
+                    btn.setCreateBy(item.getCreateBy());
+                    return btn;
                 }).collect(Collectors.toList()));
         return exists;
     }
