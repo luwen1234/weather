@@ -1,9 +1,9 @@
 package com.weather.domain.entity;
 
-import com.weather.domain.model.AccountType;
-import com.weather.domain.model.ActivityType;
-import com.weather.domain.model.GenderType;
-import com.weather.domain.model.PayType;
+import com.weather.domainApi.enums.AccountType;
+import com.weather.domainApi.enums.ActivityType;
+import com.weather.domainApi.enums.GenderType;
+import com.weather.domainApi.enums.PayType;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -99,13 +99,15 @@ public class User extends BaseEntity<Long>{
         this.status = PayType.PAY;
     }
 
-    public void createBy(Long crateBy){
-        this.setCreateBy(crateBy);
+    public User createBy(Long createBy){
+        this.setCreateBy(createBy);
         this.setCreateOn(new Date());
+        return this;
     }
 
-    public void modifyBy(Long modifyBy){
+    public User modifyBy(Long modifyBy){
         this.setModifyBy(modifyBy);
         this.setModifyOn(new Date());
+        return this;
     }
 }

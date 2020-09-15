@@ -1,6 +1,6 @@
 package com.weather.domain.entity;
 
-import com.weather.domain.model.StatusType;
+import com.weather.domainApi.enums.StatusType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -34,4 +35,16 @@ public class Privilege extends BaseEntity<Long>{
             inverseJoinColumns = @JoinColumn(name = "resource_id")
     )
     private List<Resource> resources = new ArrayList<>();
+
+    public Privilege createBy(Long createBy){
+        this.setCreateBy(createBy);
+        this.setCreateOn(new Date());
+        return this;
+    }
+
+    public Privilege modifyBy(Long modifyBy){
+        this.setModifyBy(modifyBy);
+        this.setModifyOn(new Date());
+        return this;
+    }
 }

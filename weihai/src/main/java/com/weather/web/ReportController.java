@@ -1,12 +1,12 @@
 package com.weather.web;
 
-import com.weather.assemble.ReportAssembler;
+import com.weather.domain.assembler.ReportAssembler;
 import com.weather.domain.entity.Report;
 import com.weather.domain.model.Message;
 import com.weather.domain.service.ReportService;
-import com.weather.dto.AddReportCommand;
-import com.weather.dto.ReportQuery;
-import com.weather.dto.UpdateReportCommand;
+import com.weather.domainApi.command.AddReportCommand;
+import com.weather.domainApi.query.ReportQuery;
+import com.weather.domainApi.command.UpdateReportCommand;
 import com.weather.web.vo.ReportRes;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

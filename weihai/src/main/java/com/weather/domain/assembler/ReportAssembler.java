@@ -1,8 +1,8 @@
-package com.weather.assemble;
+package com.weather.domain.assembler;
 
 import com.weather.domain.entity.Report;
-import com.weather.dto.AddReportCommand;
-import com.weather.dto.UpdateReportCommand;
+import com.weather.domainApi.command.AddReportCommand;
+import com.weather.domainApi.command.UpdateReportCommand;
 import com.weather.web.vo.ReportRes;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

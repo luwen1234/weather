@@ -1,8 +1,8 @@
 package com.weather.domain.service;
 
 import com.weather.domain.entity.Btn;
-import com.weather.dto.AddBtnCommand;
-import com.weather.dto.UpdateBtnCommand;
+import com.weather.domainApi.command.AddBtnCommand;
+import com.weather.domainApi.command.UpdateBtnCommand;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

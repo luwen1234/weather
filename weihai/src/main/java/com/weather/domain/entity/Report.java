@@ -1,6 +1,6 @@
 package com.weather.domain.entity;
 
-import com.weather.domain.model.ActivityType;
+import com.weather.domainApi.enums.ActivityType;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;

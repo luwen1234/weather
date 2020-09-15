@@ -1,4 +1,4 @@
-package com.weather.dto;
+package com.weather.domainApi.query;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

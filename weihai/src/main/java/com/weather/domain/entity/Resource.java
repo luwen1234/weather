@@ -1,7 +1,7 @@
 package com.weather.domain.entity;
 
-import com.weather.domain.model.ResourceType;
-import com.weather.domain.model.StatusType;
+import com.weather.domainApi.enums.ResourceType;
+import com.weather.domainApi.enums.StatusType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -10,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -30,7 +31,7 @@ public class Resource extends BaseEntity<Long>{
     @Column(name = "url", length = 500)
     private String url;
 
-    @Column(name = "api", length = 500)
+    @Column(name = "domainApi", length = 500)
     private String api;
 
     @Column(name = "status")
@@ -44,4 +45,16 @@ public class Resource extends BaseEntity<Long>{
             inverseJoinColumns = @JoinColumn(name = "btn_id")
     )
     private List<Btn> buttons = new ArrayList<>();
+
+    public Resource createBy(Long createBy){
+        this.setCreateBy(createBy);
+        this.setCreateOn(new Date());
+        return this;
+    }
+
+    public Resource modifyBy(Long modifyBy){
+        this.setModifyBy(modifyBy);
+        this.setModifyOn(new Date());
+        return this;
+    }
 }

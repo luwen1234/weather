@@ -1,9 +1,9 @@
 package com.weather.domain.service;
 
 import com.weather.domain.entity.Report;
-import com.weather.dto.AddReportCommand;
-import com.weather.dto.ReportQuery;
-import com.weather.dto.UpdateReportCommand;
+import com.weather.domainApi.command.AddReportCommand;
+import com.weather.domainApi.query.ReportQuery;
+import com.weather.domainApi.command.UpdateReportCommand;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

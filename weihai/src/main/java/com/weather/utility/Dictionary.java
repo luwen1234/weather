@@ -60,10 +60,10 @@ public class Dictionary {
 	/**
 	 * 雷达数据地址
 	 */
-	public static String leida = "https://qlfy.sdmsc.net/api/radar/radar1/?radarCodes=631&key=6fde3f68eef29039827027264c08f5db";
+	public static String leida = "https://qlfy.sdmsc.net/domainApi/radar/radar1/?radarCodes=631&key=6fde3f68eef29039827027264c08f5db";
 	
 	/**
 	 * 卫星数据地址
 	 */
-	public static String weixin = "https://qlfy.sdmsc.net/api/sate/?key=6fde3f68eef29039827027264c08f5db";
+	public static String weixin = "https://qlfy.sdmsc.net/domainApi/sate/?key=6fde3f68eef29039827027264c08f5db";
 }
