@@ -1,3 +1,4 @@
+/*
 package com.weather.domain.service.Impl;
 
 import com.weather.domain.assembler.BtnAssembler;
@@ -83,3 +84,4 @@ public class PrivilegeServiceImpl implements PrivilegeService {
         privilegeRepository.deleteAll(exists);
     }
 }
+*/
