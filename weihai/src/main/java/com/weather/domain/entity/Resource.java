@@ -10,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -44,4 +45,21 @@ public class Resource extends BaseEntity<Long>{
             inverseJoinColumns = @JoinColumn(name = "btn_id")
     )
     private List<Btn> buttons = new ArrayList<>();
+
+    public Resource(){
+        this.status = StatusType.ALLOW;
+        this.type = ResourceType.MENU;
+    }
+
+    public Resource createBy(Long createBy){
+        this.setCreateBy(createBy);
+        this.setCreateOn(new Date());
+        return this;
+    }
+
+    public Resource modifyBy(Long modifyBy){
+        this.setModifyBy(modifyBy);
+        this.setModifyOn(new Date());
+        return this;
+    }
 }
