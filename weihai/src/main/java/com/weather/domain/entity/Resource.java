@@ -1,7 +1,7 @@
 package com.weather.domain.entity;
 
-import com.weather.domain.model.ResourceType;
-import com.weather.domain.model.StatusType;
+import com.weather.domainApi.enums.ResourceType;
+import com.weather.domainApi.enums.StatusType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -31,7 +31,7 @@ public class Resource extends BaseEntity<Long>{
     @Column(name = "url", length = 500)
     private String url;
 
-    @Column(name = "api", length = 500)
+    @Column(name = "domainApi", length = 500)
     private String api;
 
     @Column(name = "status")
@@ -44,6 +44,7 @@ public class Resource extends BaseEntity<Long>{
             joinColumns = @JoinColumn(name = "resource_id"),
             inverseJoinColumns = @JoinColumn(name = "btn_id")
     )
+
     private List<Btn> buttons = new ArrayList<>();
 
     public Resource(){

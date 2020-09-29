@@ -13,12 +13,12 @@ import java.util.List;
 @Repository
 public interface BtnRepository extends JpaRepository<Btn, Long> {
 
-    @Query(value = "select * from wh_btn t where if(:name is not null && :name != '', t.name like %:name%, 1=1)",
+    @Query(value = "select * from WH_BTN t where if(:name is not null && :name != '', t.name like %:name%, 1=1)",
             countQuery = "select count(1) from wh_btn t where if(:name is not null && :name != '', t.name like %:name%, 1=1)",
             nativeQuery = true)
-    Page<Btn> findByName(@Param(value = "name") String name, Pageable pageable);
+    Page<Btn> pageQuery(@Param(value = "name") String name, Pageable pageable);
 
-    @Query(value = "select * from wh_btn t where if(:name is not null && :name != '', t.name like %:name%, 1=1)",
+    @Query(value = "select * from WH_BTN t where if(:name is not null && :name != '', t.name like %:name%, 1=1)",
             nativeQuery = true)
-    List<Btn> findByName(@Param(value = "name") String name);
+    List<Btn> listQuery(@Param(value = "name") String name);
 }

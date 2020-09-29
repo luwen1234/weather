@@ -1,4 +1,4 @@
-package com.weather.domain.model;
+package com.weather.domainApi.enums;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Getter;

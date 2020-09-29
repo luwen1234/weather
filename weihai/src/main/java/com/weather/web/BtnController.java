@@ -1,10 +1,10 @@
 package com.weather.web;
 
-import com.weather.assemble.BtnAssembler;
+import com.weather.domain.assembler.BtnAssembler;
 import com.weather.domain.model.Message;
 import com.weather.domain.service.BtnService;
-import com.weather.dto.AddBtnCommand;
-import com.weather.dto.UpdateBtnCommand;
+import com.weather.domainApi.command.AddBtnCommand;
+import com.weather.domainApi.command.UpdateBtnCommand;
 import com.weather.web.vo.BtnRes;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

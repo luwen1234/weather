@@ -1,8 +1,7 @@
 package com.weather.web.vo;
 
-import com.weather.domain.entity.Btn;
-import com.weather.domain.model.ResourceType;
-import com.weather.domain.model.StatusType;
+import com.weather.domainApi.enums.ResourceType;
+import com.weather.domainApi.enums.StatusType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

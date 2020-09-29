@@ -1,4 +1,4 @@
-package com.weather.web.vo;
+package com.weather.domainApi.command;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -8,12 +8,10 @@ import lombok.Setter;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@ApiModel("预报出参")
+@ApiModel("预报入参")
 @Getter
 @Setter
-public class ReportRes {
-
-    private Long id;
+public class AddReportCommand {
 
     @ApiModelProperty("预报类型id")
     @NotNull(message = "预报类型id不能为空！")
